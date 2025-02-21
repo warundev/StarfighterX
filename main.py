@@ -2,6 +2,8 @@ import random
 import pygame
 import math
 
+from pygame import mixer
+
 # Initialize pygame
 pygame.init()
 
@@ -10,6 +12,10 @@ screen = pygame.display.set_mode((800, 600))
 
 # Background
 background = pygame.image.load('background.png')
+
+# Background music
+mixer.music.load('background.wav')
+mixer.music.play(-1)
 
 # Title and icon
 pygame.display.set_caption("StarfighterX")
@@ -96,6 +102,8 @@ while running:
             if event.key == pygame.K_RIGHT:
                 playerX_change = 5
             if event.key == pygame.K_SPACE and bullet_state == "ready":
+                bullet_Sound = mixer.Sound('laser.wav')
+                bullet_Sound.play()
                 bulletX = playerX  # Set bullet position to player position
                 fire_bullet(bulletX, bulletY)
 
@@ -117,6 +125,8 @@ while running:
         # Collision
         collision = is_collision(enemyX[i], enemyY[i], bulletX, bulletY)  # Pass individual enemy positions
         if collision:
+            explosion_Sound = mixer.Sound('explosion.wav')
+            explosion_Sound.play()
             bulletY = 480
             bullet_state = "ready"
             score_value += 1

@@ -21,7 +21,11 @@ pip install pygame
 python main.py  
 ```  
 
-## **📸 Screenshots (Coming Soon!)**  
+## **📸 Screenshots**  
+
+![Screenshot (130)](https://github.com/user-attachments/assets/79a94613-4d3a-478d-9ad0-abc6fba9b751)
+
+![Screenshot (131)](https://github.com/user-attachments/assets/7d09ba82-32e0-4223-8494-b678ba06c4df)
 
 ## **📜 License**  
 This project is open-source under the MIT License.  
